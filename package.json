@@ -1,0 +1,23 @@
+{
+  "name": "playwright-hybrid-framework-restfulbooker",
+  "version": "1.0.0",
+  "description": "Hybrid Testing Framework (API &amp; UI) using Playwright, implementing POM and API Clients for Restful Booker.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manugiu/Playwright-Hybrid-Framework-RestfulBooker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/manugiu/Playwright-Hybrid-Framework-RestfulBooker/issues"
+  },
+  "homepage": "https://github.com/manugiu/Playwright-Hybrid-Framework-RestfulBooker#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.0.10"
+  }
+}
