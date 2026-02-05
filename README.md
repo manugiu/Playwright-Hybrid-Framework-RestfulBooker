@@ -44,6 +44,26 @@ npx playwright show-report
 - ✅ Booking CRUD operations
 - ✅ End-to-end booking scenarios
 
+## 🧪 Test Scenarios
+
+### Basic CRUD Operations
+- Create, read, update, and delete bookings
+- Authentication token generation
+
+### Data-Driven Testing
+- Multiple booking scenarios with edge cases
+- Special characters (Chinese, accents)
+- Boundary testing (long names, min/max values)
+
+### Schema Validation
+- Response structure verification
+- Data type validation for all fields
+
+### Negative Testing
+- Invalid authentication
+- Unauthorized update/delete attempts
+- Missing required fields
+
 ## 🎯 Key Highlights
 - Page Object Model pattern for API clients
 - TypeScript for type safety
