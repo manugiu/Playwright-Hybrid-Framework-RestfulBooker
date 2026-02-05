@@ -7,33 +7,6 @@ export class BookingClient {
         this.request = request;
     }
 
-    async createBooking(firstname: string, lastname: string, totalprice: number, depositpaid: boolean, checkin: string, checkout: string, additionalneeds: string){
-        const response = await this.request.post('/booking', {
-            data: {
-                "firstname": firstname,
-                "lastname": lastname,
-                "totalprice": totalprice,
-                "depositpaid": depositpaid,
-                "bookingdates": {
-                    "checkin": checkin,
-                    "checkout": checkout
-                },
-                "additionalneeds": additionalneeds
-            }
-        }) 
-            if (!response.ok()) {
-        throw new Error(`Post failed with status: ${response.status()}`);
-    }
-    
-    const body = await response.json();
-    
-    if (!body.bookingid) {
-        throw new Error('No token in response');
-    }
-    
-    return body.bookingid;
-}
-
     async getBooking(bookingId: number){
         const id = bookingId
         const response = await this.request.get(`/booking/${id}`) 
@@ -93,6 +66,33 @@ async deleteBooking(bookingId: number, token: string){
     }
         
         return response.status();
+}
+
+ async createBooking(firstname: string, lastname: string, totalprice: number, depositpaid: boolean, checkin: string, checkout: string, additionalneeds: string){
+        const response = await this.request.post('/booking', {
+            data: {
+                "firstname": firstname,
+                "lastname": lastname,
+                "totalprice": totalprice,
+                "depositpaid": depositpaid,
+                "bookingdates": {
+                    "checkin": checkin,
+                    "checkout": checkout
+                },
+                "additionalneeds": additionalneeds
+            }
+        }) 
+            if (!response.ok()) {
+        throw new Error(`Post failed with status: ${response.status()}`);
+    }
+    
+    const body = await response.json();
+    
+    if (!body) {
+        throw new Error('No token in response');
+    }
+    
+    return body;
 }
 
 }
